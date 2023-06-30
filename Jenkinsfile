@@ -1,7 +1,9 @@
 pipeline {
     agent { 
         node {
-            label 'docker-agent-python'
+              sshagent (credentials: ['deploy-dev']) {
+    sh 'ssh viraj.limbasiya@qi-cap.com'
+  }
             }
       }
     triggers {
