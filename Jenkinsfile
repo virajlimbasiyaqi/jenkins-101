@@ -13,7 +13,7 @@ pipeline {
             steps{
                 sshagent(['ssh-agent']){
                     sh'''
-                    ssh -tt -o StrictHostKeyChecking=no viraj.limbasiya@122.1.5.8 ls
+                    ssh -o StrictHostKeyChecking=no viraj.limbasiya@122.1.5.8 ls
                     cd myapp
                     python3 hello.py
                     python3 hello.py --name=Brad
