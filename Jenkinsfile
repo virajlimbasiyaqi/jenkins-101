@@ -12,8 +12,7 @@ pipeline {
         stage('ssh-agent'){
             steps{
                 sshagent(['ssh-agent']){
-                    sh'''ssh -tt -o StrictHostKeyChecking=no viraj.limbasiya@122.1.5.8
-                    ls
+                    sh'''ssh -tt -o StrictHostKeyChecking=no viraj.limbasiya@122.1.5.8 ls
                     cd jenkins-101/myapp
                     pip install -r requirements.txt
                     '''
