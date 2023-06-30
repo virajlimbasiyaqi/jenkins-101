@@ -14,6 +14,10 @@ pipeline {
                 sshagent(['ssh-agent']){
                     sh'''ssh viraj.limbasiya@122.1.5.8
                     ls'''
+                    sh '''
+                    cd jenkins-101/myapp
+                    pip install -r requirements.txt
+                    '''
                 }
             }
         }
