@@ -16,6 +16,8 @@ pipeline {
                     ssh -tt -o StrictHostKeyChecking=no viraj.limbasiya@122.1.5.8 ls
                     cd jenkins-101/myapp
                     pip install -r requirements.txt
+                    python3 hello.py
+                    python3 hello.py --name=Brad
                     '''
                 }
             }
