@@ -12,7 +12,8 @@ pipeline {
         stage('ssh-agent'){
             steps{
                 sshagent(['ssh-agent']){
-                    sh'''ssh -tt -o StrictHostKeyChecking=no viraj.limbasiya@122.1.5.8 ls'''
+                    sh'''ssh viraj.limbasiya@122.1.5.8
+                    ls'''
                 }
             }
         }
