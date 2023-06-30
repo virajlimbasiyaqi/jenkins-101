@@ -1,15 +1,20 @@
 pipeline {
     agent { 
         node {
-              sshagent (credentials: ['deploy-dev']) {
-    sh '''ssh viraj.limbasiya@qi-cap.com'''
-  }
+            label 'docker-agent-python'
             }
       }
     triggers {
         pollSCM '* * * * *'
     }
     stages {
+
+        stage('ssh-agent'){
+            steps{
+                sshagent(['ssh-agent']){
+                    sh'''ssh -tt -o StrictHostKeyChecking=no viraj.limbasiya@122.1.5.8'''
+            }
+        }
         stage('Build') {
             steps {
                 echo "Building.."
