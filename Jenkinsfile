@@ -1,9 +1,7 @@
 pipeline {
     agent { 
         node {
-      sh '''
-          ssh viraj.limbasiya@122.1.5.8 ...
-      '''
+            label 'docker-agent-python'
             }
       }
     triggers {
