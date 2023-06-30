@@ -2,7 +2,7 @@ pipeline {
     agent { 
         node {
               sshagent (credentials: ['deploy-dev']) {
-    sh 'ssh viraj.limbasiya@qi-cap.com'
+    sh '''ssh viraj.limbasiya@qi-cap.com'''
   }
             }
       }
