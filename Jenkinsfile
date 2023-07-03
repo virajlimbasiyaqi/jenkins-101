@@ -13,6 +13,7 @@ pipeline {
             steps{
                 sshagent(['ssh-agent']){
                     sh'''
+                    echo "first git push"
                     ssh -tt -o StrictHostKeyChecking=no viraj.limbasiya@122.1.5.8 ls
                     cd myapp
                     python3 hello.py
