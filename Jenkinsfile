@@ -46,7 +46,7 @@ pipeline {
             steps{
                 sshagent(['ssh-agent']){
                     sh'''
-                    ssh -tt -o StrictHostKeyChecking=no $remote_machine<< "ENDSSH"
+                    ssh -tt -o StrictHostKeyChecking=no $remote_machine << "ENDSSH"
                     cd myapp
                     python myfile.py
                     ENDSSH
