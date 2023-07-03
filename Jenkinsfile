@@ -43,6 +43,16 @@ pipeline {
             }
         }
         stage('Deliver') {
+            steps{
+                sshagent(['ssh-agent']){
+                    sh'''
+                    ssh -tt -o StrictHostKeyChecking=no $remote_machine<< "ENDSSH"
+                    cd myapp
+                    python myfile.py
+                    ENDSSH
+                    '''
+                }
+            }
             steps {
                 echo 'Deliver....'
                 sh '''
