@@ -14,7 +14,7 @@ pipeline {
                 sshagent(['ssh-agent']){
                     sh'''
                     echo "git push master"
-                    ssh -tt -o StrictHostKeyChecking=no $ip_address ls
+                    ssh -tt -o StrictHostKeyChecking=no viraj.limbasiya@122.1.5.8 ls
                     cd myapp
                     python3 hello.py
                     python3 hello.py --name=Brad
